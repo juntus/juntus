@@ -19,6 +19,7 @@ gem 'omniauth-facebook',    '1.4.1'
 
 group :assets do
   gem 'sass-rails',         '3.2.5'
+  gem 'bootstrap-sass',     '~> 2.1.0.1'
   gem 'coffee-rails',       '3.2.2'
   gem 'uglifier',           '1.3.0'
 end
@@ -37,6 +38,7 @@ group :test do
 end
 
 group :development, :test do
+  gem "mysql2"
   gem 'rspec-rails',        '2.11.0'
   gem 'factory_girl_rails', '1.7.0'
   gem 'pry-rails',          '0.1.6'
