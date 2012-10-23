@@ -7,6 +7,8 @@ Juntus::Application.routes.draw do
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/logout" => "sessions#destroy", :as => :logout
 
+  resources :ideas
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
