@@ -1,5 +1,9 @@
 Juntus::Application.routes.draw do
   get "welcome/index"
+  
+  match '/auth/:provider/callback', to: 'sessions#create', :as => :auth_callback
+  match "/auth/failure" => "sessions#failure", :as => :auth_failure
+  match "/logout" => "sessions#destroy", :as => :logout
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

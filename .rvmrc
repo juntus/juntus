@@ -1,1 +1,3 @@
 rvm 1.9.3@juntus --create
+export FACEBOOK_KEY=389310304473318
+export FACEBOOK_SECRET=a9bd6e2b4a6ee141a458e33b255413a2
