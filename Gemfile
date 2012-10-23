@@ -41,4 +41,7 @@ group :development, :test do
   gem 'factory_girl_rails', '1.7.0'
   gem 'pry-rails',          '0.1.6'
   gem 'awesome_print',      '1.0.2'
+  gem 'guard',              '1.3.3'
+  gem 'guard-rspec',        '1.2.1'
+  gem 'rb-fsevent'
 end
