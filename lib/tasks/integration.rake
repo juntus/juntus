@@ -35,8 +35,9 @@ INTEGRATION_TASKS = %w(
   integration:bundle_install
   db:migrate
   spec
-  integration:coverage_verify
   integration:finish
   heroku:deploy
   integration:heroku:unlock
 )
+
+#  integration:coverage_verify

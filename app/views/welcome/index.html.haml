@@ -1,2 +1,10 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+%h1 Junt.Us
+.section
+  %p Crie e participe de novas idéias
+  %p Criar idéia (botão)
+.section
+  %ul
+    - @ideas.each do |idea|
+      %li 
+        %p idea.title
+        %p idea.short_description
