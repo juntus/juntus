@@ -1,2 +1,13 @@
-%h1 Ideas#new
-  
+%h1 Nova Idéia
+= form_for @idea do |f|
+  %p
+    = f.label :title, 'Título'
+    = f.text_field :title
+  %p  
+    = f.label :short_description, 'Descrição Curta'
+    = f.text_area :short_description
+  %p  
+    = f.label :description, 'Descrição Curta'
+    = f.text_area :description    
+  %p  
+    = f.submit
