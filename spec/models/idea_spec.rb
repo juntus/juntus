@@ -15,4 +15,9 @@ describe Idea do
     it { should validate_presence_of(:description) }
     it { should validate_presence_of(:short_description) }
   end
+  
+  describe :associations do
+    it { should have_many(:registrations)}
+    it { should have_many(:users)}
+  end
 end
