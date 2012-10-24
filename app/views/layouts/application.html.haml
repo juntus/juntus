@@ -2,75 +2,34 @@
 %html{:lang => "pt"}
   %head
     %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1.0"}
     %meta{:name => "keywords", :content => ""}
     %meta{:name => "description", :content => ""}
 
-    %title= yield(:title) + "Titulo aqui"
+    %title= yield(:title) + " | Junt.us"
 
     %link{:href => "/favicon.png", :rel => "shortcut icon"}
     = yield(:header_tags)
 
     = stylesheet_link_tag "application", :type => nil, :media => "all"
-    = javascript_include_tag "application", :type => nil
     = csrf_meta_tags
 
     /[if lt IE 9]
       %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
 
   %body{:id => controller.controller_name}
-    #wrap
-      %header
-        #masthead
-          - if current_user
-            %p
-              = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
-              = link_to "Sair", logout_path
-          - else
-            %p
-              = link_to "Acesse com Facebook", "/auth/facebook", :id => "facebook-connect"
-
-        #logo<
-          = link_to "Logo", root_url
-
-        - if notice
-          %p.notice
-            = notice
-        - if alert
-          %p.alert
-            = alert
-
+    .container-fluid
+      = render "/shared/header"
+      = render "/shared/flashes"
       %hr
-      #container
-        %section{:role => "main"}
-          = yield
+      %section{:role => "main"}
+        = yield
 
-        - if content_for?(:sidebar)
-          %aside
-            = yield(:sidebar)
+      - if content_for?(:sidebar)
+        %aside
+          = yield(:sidebar)
       %hr
-      %footer
-        %p
-          = "Copyright &copy; 2012 App".html_safe
-      :plain
-        <script type="text/javascript">
-
-          var _gaq = _gaq || [];
-          _gaq.push(['_setAccount', 'XXXXX-XXXX']);
-          _gaq.push(['_trackPageview']);
-
-          (function() {
-            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-          })();
-
-        </script>
-      :erb
-        <div id="fb-root"></div>
-        <script>(function(d, s, id) {
-          var js, fjs = d.getElementsByTagName(s)[0];
-          if (d.getElementById(id)) return;
-          js = d.createElement(s); js.id = id;
-          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=<%= ENV['FACEBOOK_KEY'] %>";
-          fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));</script>
+      = render "/shared/footer"
+      = javascript_include_tag "application", :type => nil
+      = render "/shared/ga"
+      = render "/shared/fb"

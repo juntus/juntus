@@ -21,7 +21,8 @@ $(function(){
   $('#ideas li').wookmark({
     offset: 5,
     // itemWidth: 200,
-    autoResize: true
+    autoResize: true,
+    container: $("#ideas")
   });
   
 });

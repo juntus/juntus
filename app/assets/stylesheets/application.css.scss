@@ -3,7 +3,12 @@
 @import "bootstrap";
 // @import "bootstrap-responsive";
 
+body{
+  background-color: #fffff8;
+}
+
 #ideas{
+  position: relative;
   li{
     width: 180px;
     padding: 10px;
