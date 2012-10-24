@@ -1,10 +1,13 @@
 %h1 Junt.Us
 .section
   %p Crie e participe de novas idéias
-  %p Criar idéia (botão)
+  %p= link_to "Criar Idéia", new_idea_path
 .section
   %ul#ideas
     - @ideas.each do |idea|
       %li
         %h4= idea.title
         %p= idea.short_description
+        
+        
+        

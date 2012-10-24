@@ -40,4 +40,13 @@ describe IdeasController do
     end
   end    
 
+  describe "GET show" do
+    let!(:idea) { FactoryGirl.create(:idea) }
+    
+    it "assigns the requested city as @city" do
+      get :show, :id => idea.id
+      assigns(:idea).should eq(idea)
+    end
+  end
+
 end

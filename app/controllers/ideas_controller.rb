@@ -11,4 +11,8 @@ class IdeasController < ApplicationController
       redirect_to welcome_index_path, notice: 'Idea criada com Sucesso.'
     end
   end
+  
+  def show
+    @idea = Idea.find(params[:id])
+  end  
 end
