@@ -1,11 +1,11 @@
 Juntus::Application.routes.draw do
-  get "ideas/new"
-
   get "welcome/index"
   
   match '/auth/:provider/callback', to: 'sessions#create', :as => :auth_callback
   match "/auth/failure" => "sessions#failure", :as => :auth_failure
   match "/logout" => "sessions#destroy", :as => :logout
+
+  post "/ideas/:idea_id/register" => "registrations#register", :as => :register_idea
 
   resources :ideas
 

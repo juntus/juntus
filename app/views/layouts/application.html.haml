@@ -17,10 +17,11 @@
     /[if lt IE 9]
       %script{:src => "http://html5shim.googlecode.com/svn/trunk/html5.js"}
 
-  %body{:id => controller.controller_name}
+  %body
     .container-fluid
       = render "/shared/header"
       = render "/shared/flashes"
+
       %hr
       %section{:role => "main"}
         = yield

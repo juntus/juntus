@@ -1,6 +1,13 @@
 %p= @idea.title
 %p= @idea.description
 
+%p= button_to "Participar", register_idea_path(@idea)
+%h2= pluralize(@idea.registrations.count, "Inscrito")
+
+%ul
+  - @idea.users.each do |user|
+    %li= user.name
+
 %h2 Comentários
 
 .fb-comments{"data-href" => idea_path(@idea), "data-num-posts" => "2", "data-width" => "600"}
