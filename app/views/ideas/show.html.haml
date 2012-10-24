@@ -1,2 +1,6 @@
 %p= @idea.title
 %p= @idea.description
+
+%h2 Comentários
+
+.fb-comments{"data-href" => idea_path(@idea), "data-num-posts" => "2", "data-width" => "600"}

@@ -17,6 +17,7 @@ gem 'omniauth-facebook',    '1.4.1'
 # gem 'rdiscount', '1.6.8'
 # gem 'acts_as_hashed', '0.0.2'
 
+
 group :assets do
   gem 'sass-rails',         '3.2.5'
   gem 'bootstrap-sass',     '~> 2.1.0.1'
@@ -38,7 +39,7 @@ group :test do
 end
 
 group :development, :test do
-  gem "mysql2"
+  gem "sqlite3",            '1.3.6'
   gem 'rspec-rails',        '2.11.0'
   gem 'factory_girl_rails', '1.7.0'
   gem 'pry-rails',          '0.1.6'

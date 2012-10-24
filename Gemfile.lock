@@ -105,7 +105,6 @@ GEM
     mime-types (1.19)
     multi_json (1.3.6)
     multipart-post (1.1.5)
-    mysql2 (0.3.11)
     netrc (0.7.7)
     oauth2 (0.8.0)
       faraday (~> 0.8)
@@ -190,6 +189,7 @@ GEM
       hike (~> 1.2)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
+    sqlite3 (1.3.6)
     thin (1.3.1)
       daemons (>= 1.0.9)
       eventmachine (>= 0.12.6)
@@ -220,7 +220,6 @@ DEPENDENCIES
   heroku (= 2.28.12)
   integration!
   jquery-rails (= 2.1.3)
-  mysql2
   omniauth (= 1.1.1)
   omniauth-facebook (= 1.4.1)
   pg (= 0.14.0)
@@ -232,6 +231,7 @@ DEPENDENCIES
   sass-rails (= 3.2.5)
   shoulda-matchers (= 1.1.0)
   simplecov (= 0.6.1)
+  sqlite3 (= 1.3.6)
   thin (= 1.3.1)
   timecop (= 0.3.5)
   uglifier (= 1.3.0)
