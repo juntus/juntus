@@ -6,7 +6,7 @@
   %ul#ideas
     - @ideas.each do |idea|
       %li
-        %h4= idea.title
+        %h4= link_to idea.title, idea_path(idea)
         %p= idea.short_description
         
         
