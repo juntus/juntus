@@ -8,6 +8,8 @@
   - @idea.users.each do |user|
     %li= user.name
 
-%h2 Comentários
+%h2
+  %fb:comments-count{"href" => idea_url(@idea)}
+  Comentários
 
-.fb-comments{"data-href" => idea_path(@idea), "data-num-posts" => "2", "data-width" => "600"}
+.fb-comments{"data-href" => idea_url(@idea), "data-num-posts" => "2", "data-width" => "600"}
