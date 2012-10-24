@@ -7,6 +7,31 @@ body{
   background-color: #fffff8;
 }
 
+header{
+  height: 300px;
+  .header-inner{
+    width: 760px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+a{
+  color: #36767b;
+}
+
+#facebook-connect{
+  display: block;
+  background: transparent image-url("login_facebook.jpeg") no-repeat;
+  text-indent: -1000px;
+  overflow: hidden;
+  height: 48px;
+  width: 209px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
 #ideas{
   position: relative;
   li{
