@@ -12,5 +12,16 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.wookmark
 //// require bootstrap
 //= require_tree .
+
+$(function(){
+
+  $('#ideas li').wookmark({
+    offset: 5,
+    // itemWidth: 200,
+    autoResize: true
+  });
+  
+});

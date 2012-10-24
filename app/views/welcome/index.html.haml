@@ -3,8 +3,8 @@
   %p Crie e participe de novas idéias
   %p Criar idéia (botão)
 .section
-  %ul
+  %ul#ideas
     - @ideas.each do |idea|
-      %li 
-        %p idea.title
-        %p idea.short_description
+      %li
+        %h4= idea.title
+        %p= idea.short_description
