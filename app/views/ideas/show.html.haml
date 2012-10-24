@@ -6,7 +6,9 @@
 
 %ul
   - @idea.users.each do |user|
-    %li= user.name
+    %li
+      = user.name
+      = image_tag(user.photo_url)
 
 %h2
   %fb:comments-count{"href" => idea_url(@idea)}
