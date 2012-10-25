@@ -1,7 +1,7 @@
 .row-fluid.offset1
   .span12
     %h1 Nova Idéia
-    = form_for @idea do |f|
+    = form_for @idea, :html => { :multipart => true } do |f|
       %p
         = f.label :title, 'Título'
         = f.text_field :title
@@ -11,5 +11,11 @@
       %p  
         = f.label :description, 'Descrição Curta'
         = f.text_area :description, :rows => 5, :cols => 70
+      %p
+        = f.label :logo, 'Logo'
+        = f.file_field :logo
+      %p
+        = f.label :background, 'Background'
+        = f.file_field :background
       %p  
         = f.submit "Criar idéia", :class => "btn"
