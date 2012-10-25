@@ -5,4 +5,8 @@ class Idea < ActiveRecord::Base
   
   has_many :registrations
   has_many :users, :through => :registrations
+  
+  def to_param
+    "#{id}-#{title}"
+  end
 end

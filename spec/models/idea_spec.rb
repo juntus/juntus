@@ -20,4 +20,13 @@ describe Idea do
     it { should have_many(:registrations)}
     it { should have_many(:users)}
   end
+  
+  describe "to_param" do
+    let(:idea) { Factory.create(:idea, id: 100, title: "Minha ideia e muito boa") }
+    
+    it "should url concatenate id and title" do
+      idea.to_param.should == [idea.id,idea.title].join("-")
+    end
+    
+  end
 end
