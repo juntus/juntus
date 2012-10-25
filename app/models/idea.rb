@@ -7,6 +7,6 @@ class Idea < ActiveRecord::Base
   has_many :users, :through => :registrations
   
   def to_param
-    "#{id}-#{title}"
+    "#{id}-#{title.parameterize}"
   end
 end
