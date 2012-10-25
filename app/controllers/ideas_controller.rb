@@ -9,7 +9,9 @@ class IdeasController < ApplicationController
 
     if @idea.save
       redirect_to welcome_index_path, notice: 'Idea criada com Sucesso.'
-    end
+    else
+      render 'new'
+    end  
   end
   
   def show

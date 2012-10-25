@@ -22,22 +22,36 @@ describe IdeasController do
   end
   
   describe "POST create" do
-    it "creates a new Idea" do
-      expect {
+    context "with valid params" do
+      it "creates a new Idea" do
+        expect {
+          post :create, idea: valid_attributes
+        }.to change(Idea, :count).by(1)
+      end
+
+      it "assigns a created idea" do
         post :create, idea: valid_attributes
-      }.to change(Idea, :count).by(1)
-    end
+        assigns(:idea).should be_a(Idea)
+        assigns(:idea).should be_persisted
+      end
 
-    it "assigns a created idea" do
-      post :create, idea: valid_attributes
-      assigns(:idea).should be_a(Idea)
-      assigns(:idea).should be_persisted
+      it "redirects to the index" do
+        post :create, idea: valid_attributes
+        response.should redirect_to(welcome_index_path)
+      end      
     end
+    context "with invalid params" do
+      def do_action(param)
+        post(:create, idea: param)
+      end
+      
+      before do
+        do_action({title: "", description: "", short_description: "Lorem Ipsum é simplesmente uma simulação"})
+      end
 
-    it "redirects to the index" do
-      post :create, idea: valid_attributes
-      response.should redirect_to(welcome_index_path)
-    end
+      it { should render_template(:new) }
+      it { should respond_with(:success) }
+    end      
   end    
 
   describe "GET show" do
