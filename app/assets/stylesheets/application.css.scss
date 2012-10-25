@@ -3,50 +3,70 @@
 @import "bootstrap";
 // @import "bootstrap-responsive";
 
-body{
-  background-color: #fffff8;
-}
+// COLORS
+$bg_color: #fffff8;
+$link_color: #36767b;
 
-header{
-  height: 300px;
-  .header-inner{
-    width: 760px;
-    margin: 0 auto;
-    position: relative;
-  }
+$red: #c1272d;
+
+body{
+  background-color: $bg_color;
 }
 
 a{
-  color: #36767b;
+  color: $link_color;
+}
+
+.container-fluid{
+  padding: 0px;
+}
+
+header{
+  h1{
+    padding-top: 10px;
+    font-size: 500%;
+  }
+  .desc{
+    font-size: 150%;
+    line-height: 1.5em;
+    margin: 10px 0px;
+  }
+}
+
+#login{
+  float: right;
 }
 
 #facebook-connect{
   display: block;
-  background: transparent image-url("login_facebook.jpeg") no-repeat;
+  background: transparent image-url("login_facebook.jpeg") no-repeat -3px;
   text-indent: -1000px;
   overflow: hidden;
   height: 48px;
   width: 209px;
-  position: absolute;
-  right: 10px;
-  top: 10px;
 }
 
 #ideas{
   position: relative;
   li{
     width: 180px;
-    padding: 10px;
     background-color: #fff;
     -moz-transition: box-shadow 0.15s ease-out;
     -o-transition: box-shadow 0.15s ease-out;
     -webkit-transition: box-shadow 0.15s ease-out;
     -ms-transition: box-shadow 0.15s ease-out;
     transition: box-shadow 0.15s ease-out;
-    -moz-border-radius: 2px;
-    -webkit-border-radius: 2px;
-    border-radius: 2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
     display: none;
     border: 1px solid #DEDEDE;
+  }
+  h4 a{
+    padding: 5px 0px;
+    display: block;
+    font-weight: normal;
+    color: #fff;
+    background-color: $red;
   }
 }

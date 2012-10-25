@@ -1,13 +1,20 @@
-%header.row-fluid
-  .header-inner
-    #logo.span4
-      %h1= link_to "Junt.us", root_url
-    #masthead.span8
-      - if current_user
-        %p
-          = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
-          = link_to "Sair", logout_path
-      - else
-        %p
+%header
+  .row-fluid
+    .header-inner.span10.offset1
+      #login
+        - if current_user
+          %p
+            = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
+            = link_to "Sair", logout_path
+        - else
           = link_to "Acesse com Facebook", "/auth/facebook", :id => "facebook-connect"
+        %br
+        = link_to "Adicionar Idéia", new_idea_path, :class => "btn btn-large"
+        
+      #logo
+        %h1= link_to "Junt.us", root_url
+        
+  .row-fluid
+    .desc.span8.offset2
+      %p Pensado para ser um site de código fonte aberto, rodando para todo o Brasil, o Junt.us oferece espaço para criação e divulgação de idéias
 
