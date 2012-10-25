@@ -203,5 +203,8 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
-    errors:
-      <<: *errors
+    attributes:
+      idea:
+        title: Nome
+        short_description: Descrição Curta
+        description: Descrição
