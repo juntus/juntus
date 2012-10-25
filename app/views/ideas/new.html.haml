@@ -1,13 +1,15 @@
-%h1 Nova Idéia
-= form_for @idea do |f|
-  %p
-    = f.label :title, 'Título'
-    = f.text_field :title
-  %p  
-    = f.label :short_description, 'Descrição Curta'
-    = f.text_area :short_description
-  %p  
-    = f.label :description, 'Descrição Curta'
-    = f.text_area :description    
-  %p  
-    = f.submit
+.row-fluid.offset1
+  .span12
+    %h1 Nova Idéia
+    = form_for @idea do |f|
+      %p
+        = f.label :title, 'Título'
+        = f.text_field :title
+      %p  
+        = f.label :short_description, 'Descrição Curta'
+        = f.text_area :short_description, :rows => 2
+      %p  
+        = f.label :description, 'Descrição Curta'
+        = f.text_area :description, :rows => 5, :cols => 70
+      %p  
+        = f.submit "Criar idéia", :class => "btn"
