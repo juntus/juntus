@@ -1,4 +1,6 @@
 Juntus::Application.routes.draw do
+
+  get "dashboard" => "users#dashboard"
   get "welcome/index"
   
   match '/auth/:provider/callback', to: 'sessions#create', :as => :auth_callback

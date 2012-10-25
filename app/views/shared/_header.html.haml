@@ -4,7 +4,7 @@
       #login
         - if current_user
           %p
-            = "Bem-vindo <strong>#{current_user.name}</strong> &bull; ".html_safe
+            = "Bem-vindo <strong>#{link_to current_user.name, dashboard_path}</strong> &bull; ".html_safe
             = link_to "Sair", logout_path
         - else
           = link_to "Acesse com Facebook", "/auth/facebook", :id => "facebook-connect"
