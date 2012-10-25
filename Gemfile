@@ -35,7 +35,6 @@ group :test do
   gem 'shoulda-matchers',   '1.1.0'
   gem 'timecop',            '0.3.5'
   gem 'simplecov', '0.6.1', :require => false
-  # gem 'guard-rspec', '2.1.0'
 end
 
 group :development, :test do
@@ -46,5 +45,5 @@ group :development, :test do
   gem 'awesome_print',      '1.0.2'
   gem 'guard',              '1.3.3'
   gem 'guard-rspec',        '1.2.1'
-  gem 'rb-fsevent'
+  gem 'rb-fsevent',         '0.9.2'
 end
