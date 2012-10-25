@@ -1,10 +1,8 @@
 .row-fluid
   .span12
     %ul#ideas
-      - @ideas.each do |idea|
-        %li
-          %h4= link_to idea.title, idea_path(idea)
-          %p= idea.short_description
+      = render @ideas
+
         
         
         
