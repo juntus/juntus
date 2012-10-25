@@ -91,3 +91,25 @@ header{
     color: $text_color;
   }
 }
+
+
+footer{
+  border-top: 1px solid #ccc;
+  padding: 10px 20px 20px 20px;
+  li{
+    display: block;
+    float: left;
+    margin-right: 30px;
+    padding: 10px;
+    &.title{
+      font-weight: bold;
+      font-size: 150%;
+    }
+  }
+  .copy{
+    float: right;
+    color: $text_color;
+  }
+}
+
+footer:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }

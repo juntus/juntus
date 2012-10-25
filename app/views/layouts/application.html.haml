@@ -29,7 +29,7 @@
       - if content_for?(:sidebar)
         %aside
           = yield(:sidebar)
-      %hr
+
       = render "/shared/footer"
       = javascript_include_tag "application", :type => nil
       = render "/shared/ga"
