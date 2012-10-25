@@ -19,7 +19,7 @@
 $(function(){
 
   $('#ideas li').wookmark({
-    offset: 5,
+    offset: 10,
     // itemWidth: 200,
     autoResize: true,
     container: $("#ideas")

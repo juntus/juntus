@@ -6,6 +6,7 @@
 // COLORS
 $bg_color: #fffff8;
 $link_color: #36767b;
+$text_color: #666666;
 
 $red: #c1272d;
 
@@ -31,6 +32,7 @@ header{
     font-size: 150%;
     line-height: 1.5em;
     margin: 10px 0px;
+    color: $text_color;
   }
   
   #logo a{
@@ -83,5 +85,9 @@ header{
     font-weight: normal;
     color: #fff;
     background-color: $red;
+  }
+  .desc{
+    padding: 5px 10px;
+    color: $text_color;
   }
 }
