@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe Idea do
   describe :mass_assignment do
-    [:description, :short_description, :title].each do |attr|
+    [:description, :short_description, :title, :logo, :background].each do |attr|
       it { should allow_mass_assignment_of(attr) }
     end
     [:user_id].each do |attr|
