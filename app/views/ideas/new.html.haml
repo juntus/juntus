@@ -2,6 +2,9 @@
   .span12
     %h1 Nova Idéia
     = form_for @idea, :html => { :multipart => true } do |f|
+      - @idea.errors.full_messages.each do |msg|
+        %p
+          = msg    
       %p
         = f.label :title, 'Título'
         = f.text_field :title
