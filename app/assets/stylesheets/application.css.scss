@@ -19,6 +19,7 @@ a{
 
 .container-fluid{
   padding: 0px;
+  background: $bg_color image-url("background_repeat_header.png") repeat-x;
 }
 
 header{
@@ -30,6 +31,20 @@ header{
     font-size: 150%;
     line-height: 1.5em;
     margin: 10px 0px;
+  }
+  
+  #logo a{
+    background: image-url("logo_header.png") no-repeat;
+    width: 377px;
+    height: 138px;
+    text-indent: -9999px;
+    display:block;
+    position:relative;
+    top: -20px;
+  }
+  
+  #new-idea-button {
+    float:right;
   }
 }
 

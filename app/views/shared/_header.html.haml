@@ -9,7 +9,7 @@
         - else
           = link_to "Acesse com Facebook", "/auth/facebook", :id => "facebook-connect"
         %br
-        = link_to "Adicionar Idéia", new_idea_path, :class => "btn btn-large"
+        = link_to image_tag("botao_mais_ideia.png"), new_idea_path, :id => "new-idea-button"
         
       #logo
         %h1= link_to "Junt.us", root_url
@@ -17,4 +17,3 @@
   .row-fluid
     .desc.span8.offset2
       %p Pensado para ser um site de código fonte aberto, rodando para todo o Brasil, o Junt.us oferece espaço para criação e divulgação de idéias
-
