@@ -2,6 +2,7 @@ Juntus::Application.routes.draw do
 
   get "dashboard" => "users#dashboard"
   get "welcome/index"
+  get "quem_somos"            => "welcome#quem_somos"
   
   match '/auth/:provider/callback', to: 'sessions#create', :as => :auth_callback
   match "/auth/failure" => "sessions#failure", :as => :auth_failure

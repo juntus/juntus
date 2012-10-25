@@ -16,4 +16,11 @@ describe WelcomeController do
       assigns(:ideas).should == [idea]
     end
   end
+  
+  describe "GET 'quem_somos'" do
+    it "returns http success" do
+      get 'quem_somos'
+      response.should be_success
+    end
+  end
 end
