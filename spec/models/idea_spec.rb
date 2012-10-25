@@ -27,6 +27,10 @@ describe Idea do
     
     it "should url concatenate id and title" do
       idea.to_param.should == [idea.id,idea.title.parameterize].join("-")
-    end    
+    end
+    
+    it "should separate words with '-'" do
+      idea.title.parameterize.should == "minha-ideia-e-muito-boa"
+    end
   end
 end
