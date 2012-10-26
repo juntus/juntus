@@ -8,7 +8,7 @@ class Idea < ActiveRecord::Base
   belongs_to :owner, :class_name => User, :foreign_key => :user_id
   
   has_attached_file :logo, 
-                    :styles => { :medium => "300x300>", :thumb => "100x100>" },
+                    :styles => { :medium => "216x216>", :thumb => "100x100>" },
                     :storage => :s3,
                     :bucket => ENV['AMAZON_S3_BUCKET'],
                     :path => "logos/:id.:style.:extension",

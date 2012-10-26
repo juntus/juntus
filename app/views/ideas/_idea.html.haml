@@ -1,6 +1,7 @@
 %li
   .idea-title
-    %h4= link_to idea.title, idea_path(idea)
+    %h4= link_to idea.title, idea
     .shadow
-  .idea-image
-  %p.desc= idea.short_description
+  = link_to idea do
+    .idea-image{:style => "background-image: url(#{idea.logo.url(:medium)})"}
+    %p.desc= idea.short_description

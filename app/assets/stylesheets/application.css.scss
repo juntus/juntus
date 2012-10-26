@@ -70,17 +70,6 @@ header{
   li{
     width:244px;
     padding-bottom: 1em;
-    // background-color: #fff;
-    //     -moz-transition: box-shadow 0.15s ease-out;
-    //     -o-transition: box-shadow 0.15s ease-out;
-    //     -webkit-transition: box-shadow 0.15s ease-out;
-    //     -ms-transition: box-shadow 0.15s ease-out;
-    //     transition: box-shadow 0.15s ease-out;
-    //     -moz-border-radius: 3px;
-    //     -webkit-border-radius: 3px;
-    //     border-radius: 3px;
-    //     display: none;
-    //     border: 1px solid #DEDEDE;
   }
   .idea-title {
   	float:left;
@@ -95,13 +84,6 @@ header{
     	padding: 10px 1px 10px 14px;
     	z-index:2;
     }
-  }
-  h4 a{
-    // padding: 5px 0px;
-    //     display: block;
-    //     font-weight: normal;
-    //     color: #fff;
-    //     background-color: $red;
   }
   .shadow{
     background: image-url("idea-shadow.png") bottom transparent;
@@ -123,6 +105,7 @@ header{
     min-height: 40px;
     padding: 5px;
     z-index:3;
+    background-color: #fff;
   }
   
   .idea-image {
@@ -132,8 +115,8 @@ header{
     -moz-border-radius-topright: 6px;
     border-top-left-radius: 6px;
     border-top-right-radius: 6px;
-    background:image-url("idea-default-image.png") no-repeat;
-    height:196px;
+    background: #fff image-url("idea-default-image.png") no-repeat;
+    height:216px;
     margin-left:14px;
     width:216px;
     z-index:4;
