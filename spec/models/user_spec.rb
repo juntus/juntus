@@ -14,8 +14,8 @@ describe User do
   end
   
   describe :associations do
-    it { should have_many(:registrations) }
-    it { should have_many(:ideas) }
+    it { should have_many(:registrations)}
+    it { should have_many(:ideas)}
   end
   
   

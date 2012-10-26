@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   
   validates :name, :email, presence: true
   
+  has_many :ideas
   has_many :registrations
   has_many :ideas
   
