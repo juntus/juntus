@@ -99,7 +99,24 @@ header{
   -moz-border-radius: .5em;
   -webkit-border-radius: .5em;
   border-radius: .5em;
-  margin-bottom: 1em;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  float: none;
+}
+
+.idea-content{
+  padding: 0px;
+}
+
+.idea-header{
+  padding: 10px;
+}
+
+.idea-body{
+  padding: 10px;
+  aside{
+    background-color: #ededed;
+  }
 }
 
 footer{

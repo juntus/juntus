@@ -26,10 +26,6 @@
       %section{:role => "main"}
         = yield
 
-      - if content_for?(:sidebar)
-        %aside
-          = yield(:sidebar)
-
       = render "/shared/footer"
       = javascript_include_tag "application", :type => nil
       = render "/shared/ga"
