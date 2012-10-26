@@ -5,6 +5,7 @@ class Idea < ActiveRecord::Base
   
   has_many :registrations
   has_many :users, :through => :registrations
+  belongs_to :owner, :class_name => User, :foreign_key => :user_id
   
   has_attached_file :logo, 
                     :styles => { :medium => "300x300>", :thumb => "100x100>" },

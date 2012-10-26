@@ -18,6 +18,6 @@ class ApplicationController < ActionController::Base
   end
   
   def authenticate!
-    user_signed_in? || redirect_to((request.env["HTTP_REFERER"].blank?) ? root_path : :back, :notice => "Você precisa estar logado...")
+    user_signed_in? || redirect_to((request.env["HTTP_REFERER"].blank?) ? root_path : :back, :alert => "Você precisa estar logado...")
   end
 end

@@ -18,8 +18,9 @@ describe Idea do
   end
   
   describe :associations do
-    it { should have_many(:registrations)}
-    it { should have_many(:users)}
+    it { should have_many(:registrations) }
+    it { should have_many(:users) }
+    it { should belong_to(:owner) }
   end
   
   describe "to_param" do
