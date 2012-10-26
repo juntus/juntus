@@ -1,6 +1,8 @@
-- if notice
-  %p.notice
-    = notice
-- if alert
-  %p.alert
-    = alert
+.row-fluid
+  .span8.offset2
+    - if notice
+      %p.notice
+        = notice
+    - if alert
+      %p.alert
+        = alert

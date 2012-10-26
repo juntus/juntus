@@ -92,6 +92,15 @@ header{
   }
 }
 
+.content{
+  background-color: #fff;
+  padding: 20px;
+  border: 2px solid #ccc;
+  -moz-border-radius: .5em;
+  -webkit-border-radius: .5em;
+  border-radius: .5em;
+  margin-bottom: 1em;
+}
 
 footer{
   border-top: 1px solid #ccc;
@@ -113,3 +122,29 @@ footer{
 }
 
 footer:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+
+// FORMS
+
+form .clearfix:before, form .clearfix:after {
+  display: inline;
+}
+
+.f_error{
+  input,select,textarea{
+    color:#b94a48;
+    border-color:#b94a48;
+  }
+}
+.f_error input:focus,.f_error select:focus,.f_error textarea:focus{-webkit-box-shadow:0 0 6px #d59392;-moz-box-shadow:0 0 6px #d59392;box-shadow:0 0 6px #d59392;border-color:#953b39}
+.f_error .input-prepend .add-on,.f_error .input-append .add-on{color:#b94a48;background-color:#f2dede;border-color:#b94a48}
+.f_error label.error {display:block;font-size:11px;font-weight:700;color:#C62626}
+input[type="text"] + label.error,input[type="password"] + label.error, select + label.error, textarea + label.error {margin-top:-6px}
+.f_error label.radio + label.error,.f_error label.checkbox + label.error {margin-top:5px}
+.input-prepend.f_error label.error,.input_append.f_error  label.error {margin-top:4px}
+.control-group.f_error label.error {margin-top:2px}
+
+.f_success > label,.f_success .help-block,.f_success .help-inline{color:#468847}
+.f_success input,.f_success select,.f_success textarea{color:#468847;border-color:#468847}
+.f_success input:focus,.f_success select:focus,.f_success textarea:focus{-webkit-box-shadow:0 0 6px #7aba7b;-moz-box-shadow:0 0 6px #7aba7b;box-shadow:0 0 6px #7aba7b;border-color:#356635}
+.f_success .input-prepend .add-on,.f_success .input-append .add-on{color:#468847;background-color:#dff0d8;border-color:#468847}

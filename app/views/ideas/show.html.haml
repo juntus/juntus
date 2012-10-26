@@ -1,17 +1,19 @@
-%p= @idea.title
-%p= @idea.description
+.row-fluid
+  .content.offset2.span8
+    %h2= @idea.title
+    %p= @idea.description
 
-%p= button_to "Participar", register_idea_path(@idea)
-%h2= pluralize(@idea.registrations.count, "Inscrito")
+    %p= button_to "Participar", register_idea_path(@idea)
+    %h2= pluralize(@idea.registrations.count, "Inscrito")
 
-%ul
-  - @idea.users.each do |user|
-    %li
-      = user.name
-      = image_tag(user.photo_url)
+    %ul
+      - @idea.users.each do |user|
+        %li
+          = user.name
+          = image_tag(user.photo_url)
 
-%h2
-  %fb:comments-count{"href" => idea_url(@idea)}
-  Comentários
+    %h2
+      %fb:comments-count{"href" => idea_url(@idea)}
+      Comentários
 
-.fb-comments{"data-href" => idea_url(@idea), "data-num-posts" => "2", "data-width" => "600"}
+    .fb-comments{"data-href" => idea_url(@idea), "data-num-posts" => "2", "data-width" => "600"}
