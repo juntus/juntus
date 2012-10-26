@@ -10,6 +10,7 @@
 
       - @user.ideas.each do |idea|
         .idea
+          = image_tag idea.logo.url(:medium), :width => "140"
           %h2= link_to idea.title, edit_idea_path(idea)
           %p= idea.short_description
       - unless @user.ideas.any?
@@ -21,6 +22,6 @@
       %h2 Idéias que participo
       - @user.registrations.each do |registration|
         .idea
-          = image_tag "imagem_ideia.png"
-          %h2= registration.idea.title
+          = image_tag registration.idea.logo.url(:medium), :width => "140"
+          %h2= link_to registration.idea.title
           %p= registration.idea.short_description
