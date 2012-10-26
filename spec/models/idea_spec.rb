@@ -12,9 +12,9 @@ describe Idea do
   end
   
   describe :validations do
-    it { should validate_presence_of(:title) }
-    it { should validate_presence_of(:description) }
-    it { should validate_presence_of(:short_description) }
+    [:title, :description, :short_description, :user_id].each do |field|
+      it { should validate_presence_of(field) }
+    end
   end
   
   describe :associations do

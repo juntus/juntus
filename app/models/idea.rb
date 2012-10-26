@@ -1,7 +1,7 @@
 class Idea < ActiveRecord::Base
   attr_accessible :description, :short_description, :title, :logo, :background
   
-  validates :title, :description, :short_description, presence: true
+  validates :title, :description, :short_description, :user_id, presence: true
   
   has_many :registrations
   has_many :users, :through => :registrations
