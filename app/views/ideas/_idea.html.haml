@@ -1,3 +1,6 @@
 %li
-  %h4= link_to idea.title, idea_path(idea)
+  .idea-title
+    %h4= link_to idea.title, idea_path(idea)
+    .shadow
+  .idea-image
   %p.desc= idea.short_description
