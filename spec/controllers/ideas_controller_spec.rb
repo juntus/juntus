@@ -37,7 +37,7 @@ describe IdeasController do
 
       it "redirects to the index" do
         post :create, idea: valid_attributes
-        response.should redirect_to(welcome_index_path)
+        response.should redirect_to(idea_path(assigns(:idea)))
       end      
     end
     context "with invalid params" do
@@ -60,6 +60,20 @@ describe IdeasController do
     it "assigns the requested city as @city" do
       get :show, :id => idea.id
       assigns(:idea).should eq(idea)
+    end
+  end
+  
+  describe "GET 'index'" do
+    let!(:idea) { FactoryGirl.create(:idea) }
+    
+    it "returns http success" do
+      get 'index'
+      response.should be_success
+    end
+    
+    it "should set @ideas" do
+      get 'index'
+      assigns(:ideas).should == [idea]
     end
   end
 

@@ -8,7 +8,7 @@ class IdeasController < ApplicationController
     @idea = Idea.new(params[:idea])
 
     if @idea.save
-      redirect_to welcome_index_path, notice: 'Idea criada com Sucesso.'
+      redirect_to @idea, notice: 'Idea criada com Sucesso.'
     else
       render 'new'
     end  
