@@ -1,2 +1,8 @@
-%h1 Users#dashboard
-%p Find me in app/views/users/dashboard.html.haml
+.profile
+  = image_tag(@user.photo_url)
+  %h1= @user.name
+
+- @user.registrations.each do |registration|
+  .idea
+    %h2= registration.idea.title
+    %p= registration.idea.short_description
