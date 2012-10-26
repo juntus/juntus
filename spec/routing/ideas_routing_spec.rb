@@ -12,8 +12,8 @@ describe IdeasController do
     }
     
     it "recognizes and generates #new" do
-      get("/ideas/new").should route_to(:controller => "ideas", :action => "new")
-      new_idea_path.should == "/ideas/new"
+      get("/ideas/nova").should route_to(:controller => "ideas", :action => "new")
+      new_idea_path.should == "/ideas/nova"
     end
   end
 end
