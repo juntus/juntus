@@ -1,11 +1,12 @@
 .profile
-  = image_tag(@user.photo_url)
-  %h1= @user.name
-
   .row
     .content.span12
+    
+      = image_tag(@user.photo_url, height: "200px", :class => "thumbnail")
+      %h1= @user.name
 
-      %h2 Meus projetos
+      %br
+      %h2 Minhas idéias
 
       - @user.ideas.each do |idea|
         .idea
@@ -15,7 +16,9 @@
         %h4 
           Você ainda não criou idéias. 
           = link_to "Começe agora!!", new_idea_path
-
+      
+      %br
+      %h2 Idéias que participo
       - @user.registrations.each do |registration|
         .idea
           = image_tag "imagem_ideia.png"
