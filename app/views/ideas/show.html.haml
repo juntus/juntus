@@ -1,24 +1,32 @@
 .row
-  .content.span12
+  .content.span12.idea-content
     .idea-header.row-fluid
-      .span2.idea-photo
-      .span8.idea-title
-        %h2= @idea.title
-        %p= @idea.short_description
-      .span2.idea-button
-        = link_to "Participar", register_idea_path(@idea), :class => 'btn btn-large'
+      .inner
+        .span2.idea-photo
+        .span8.idea-title
+          %h2= @idea.title
+          %p= @idea.short_description
+        .span2.idea-button
+          = link_to "Participar", register_idea_path(@idea), :class => 'btn btn-large'
     .idea-body.row-fluid
-      .span8
-        = simple_format(@idea.description)
-        .fb-comments{"data-href" => idea_url(@idea), "data-num-posts" => "2"}
+      .inner
+        .span8
+          = simple_format(@idea.description)
+          %hr
+          .fb-comments{"data-href" => idea_url(@idea), "data-num-posts" => "2"}
         
       %aside.span4
-        = pluralize(@idea.registrations.count, "Inscrito") 
-        %fb:comments-count{"href" => idea_url(@idea)}
-        Comentários
+        .registered_count
+          .counter= @idea.registrations.count
+          participantes
+        .comment_count
+          .counter<
+            %fb:comments-count{"href" => idea_url(@idea)}
+          comentários
         
-        %ul.registred
+        %h5 participantes
+        %ul.registered_list
           - @idea.users.each do |user|
             %li
+              = image_tag(user.photo_url, :class => "img-circle")
               = user.name
-              = image_tag(user.photo_url)

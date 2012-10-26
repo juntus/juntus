@@ -9,6 +9,8 @@ $link_color: #36767b;
 $text_color: #666666;
 
 $red: #c1272d;
+$cyan: #78a4a7;
+$purple: #657FA2;
 
 body{
   background-color: $bg_color;
@@ -106,16 +108,60 @@ header{
 
 .idea-content{
   padding: 0px;
+  border-width: 0px;
+  .inner{
+    padding: 10px;
+  }
 }
 
 .idea-header{
-  padding: 10px;
+  padding: 0px;
+  background-color: $red;
+  color: #fff;
+  h2{
+    font-size: 200%;
+    margin: 0px;
+  }
 }
 
 .idea-body{
-  padding: 10px;
   aside{
     background-color: #ededed;
+    h5{
+      clear: both;
+      text-align: center;
+      color: #fff;
+      background-color: $cyan;
+      font-weight: normal;
+      padding: 10px 0px;
+    }
+  }
+  
+  .registered_count, .comment_count{
+    float: left;
+    margin: 10px 20px;
+    padding: 10px;
+    text-align: center;
+    .counter{
+      color: #fff;
+      font-size: 150%;
+      vertical-align: middle;
+      padding: 1.5em 1em;
+      -moz-border-radius: 2em;
+      -webkit-border-radius: 2em;
+      border-radius: 2em;
+      margin-bottom: 10px;
+    }
+  }
+  
+  .registered_count{
+    color: $cyan;
+    .counter{ background-color: $cyan; }
+  }
+  
+  .comment_count{
+    color: $purple;
+    .counter{ background-color: $purple; }
   }
 }
 
