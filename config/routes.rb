@@ -1,7 +1,6 @@
 Juntus::Application.routes.draw do
 
   get "dashboard" => "users#dashboard"
-  get "welcome/index"
   get "quem_somos"            => "welcome#quem_somos"
   
   match '/auth/:provider/callback', to: 'sessions#create', :as => :auth_callback
@@ -61,7 +60,7 @@ Juntus::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'welcome#index'
+  root :to => 'ideas#index'
 
   # See how all your routes lay out with "rake routes"
 
