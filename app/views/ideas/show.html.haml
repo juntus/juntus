@@ -7,7 +7,7 @@
           %h2= @idea.title
           %p= @idea.short_description
         .span2.idea-button
-          = link_to "Participar", register_idea_path(@idea), :class => 'btn btn-large'
+          = link_to image_tag("participate_button.png"), register_idea_path(@idea), :method => :post
     .idea-body.row-fluid
       .inner
         .span8
