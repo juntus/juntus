@@ -27,12 +27,11 @@ describe IdeasController do
           it { idea.reload.title.should == "Curitiba" }
         end
         context "when user isnt the idea's owner" do
-          before do
-            put 'update', :id => idea.to_param, :idea => { :title => "Curitiba" }
+          it "should raise error" do
+            expect{ 
+              put 'update', :id => idea.to_param 
+            }.to raise_error(ActiveRecord::RecordNotFound)
           end
-
-          it { response.should redirect_to(root_path) }
-          it { flash[:alert].should == "Você não tem permissão!" }
         end
       end
       context "with invalid params" do
@@ -73,12 +72,11 @@ describe IdeasController do
         it { render_template 'edit' }
       end
       context "when user isnt the idea's owner" do
-        before do
-          get 'edit', :id => idea.to_param
+        it "should raise error" do
+          expect{ 
+            get 'edit', :id => idea.to_param
+          }.to raise_error(ActiveRecord::RecordNotFound)
         end
-      
-        it { response.should redirect_to(root_path) }
-        it { flash[:alert].should == "Você não tem permissão!" }
       end
     end
     

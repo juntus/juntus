@@ -4,8 +4,6 @@ class IdeasController < ApplicationController
   
   def edit
     @idea = current_user.ideas.find(params[:id])
-  rescue
-    redirect_to root_path, :alert => "Você não tem permissão!"
   end
   
   def update
@@ -15,8 +13,6 @@ class IdeasController < ApplicationController
     else
       render "edit"
     end
-  rescue
-    redirect_to root_path, :alert => "Você não tem permissão!"
   end
 
   def new
