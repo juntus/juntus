@@ -9,8 +9,8 @@
 
       - @user.ideas.each do |idea|
         .idea
-          %h2= registration.idea.title
-          %p= registration.idea.short_description
+          %h2= link_to idea.title, edit_idea_path(idea)
+          %p= idea.short_description
       - unless @user.ideas.any?
         %h4 
           Você ainda não criou idéias. 
