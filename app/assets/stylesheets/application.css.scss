@@ -211,3 +211,23 @@ input[type="text"] + label.error,input[type="password"] + label.error, select + 
 .f_success input,.f_success select,.f_success textarea{color:#468847;border-color:#468847}
 .f_success input:focus,.f_success select:focus,.f_success textarea:focus{-webkit-box-shadow:0 0 6px #7aba7b;-moz-box-shadow:0 0 6px #7aba7b;box-shadow:0 0 6px #7aba7b;border-color:#356635}
 .f_success .input-prepend .add-on,.f_success .input-append .add-on{color:#468847;background-color:#dff0d8;border-color:#468847}
+
+
+// Profile
+
+.profile{
+  .idea {
+    border-top: 1px solid #ccc;
+    padding: 20px 0;
+    height: 130px;
+  }
+  
+  img {
+    float:left;
+    margin-right: 20px;
+  }
+  
+  h2 {
+    color:#0071BC;
+  }
+}

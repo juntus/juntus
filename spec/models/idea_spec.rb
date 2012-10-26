@@ -23,6 +23,9 @@ describe Idea do
     it { should belong_to(:owner) }
   end
   
+  it { Idea.new.logo.url.should == "/logos/original/missing.png" }
+  it { Idea.new.background.url.should == "/backgrounds/original/missing.png" }
+  
   describe "to_param" do
     let(:idea) { Factory.create(:idea, id: 100, title: "Minha idéia e muito boa") }
     

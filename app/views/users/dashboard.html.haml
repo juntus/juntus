@@ -2,18 +2,22 @@
   = image_tag(@user.photo_url)
   %h1= @user.name
 
-%h2 Meus projetos
+  .row
+    .content.span12
 
-- @user.ideas.each do |idea|
-  .idea
-    %h2= registration.idea.title
-    %p= registration.idea.short_description
-- unless @user.ideas.any?
-  %h4 
-    Você ainda não criou idéias. 
-    = link_to "Começe agora!!", new_idea_path
+      %h2 Meus projetos
 
-- @user.registrations.each do |registration|
-  .idea
-    %h2= registration.idea.title
-    %p= registration.idea.short_description
+      - @user.ideas.each do |idea|
+        .idea
+          %h2= registration.idea.title
+          %p= registration.idea.short_description
+      - unless @user.ideas.any?
+        %h4 
+          Você ainda não criou idéias. 
+          = link_to "Começe agora!!", new_idea_path
+
+      - @user.registrations.each do |registration|
+        .idea
+          = image_tag "imagem_ideia.png"
+          %h2= registration.idea.title
+          %p= registration.idea.short_description
