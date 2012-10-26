@@ -9,7 +9,7 @@ Juntus::Application.routes.draw do
 
   post "/ideas/:idea_id/register" => "registrations#register", :as => :register_idea
 
-  resources :ideas, :path_names => { :new => 'nova' }
+  resources :ideas, :path_names => { :new => 'nova', :edit => 'editar' }
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

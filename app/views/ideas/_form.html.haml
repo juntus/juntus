@@ -1,0 +1,18 @@
+= form_for @idea, :html => { :multipart => true } do |f|
+  %p
+    = f.label :title, 'Título'
+    = f.text_field :title
+  %p  
+    = f.label :short_description, 'Descrição Curta'
+    = f.text_area :short_description, :rows => 2
+  %p  
+    = f.label :description, 'Descrição Completa'
+    = f.text_area :description, :rows => 5, :cols => 70
+  %p
+    = f.label :logo, 'Logo'
+    = f.file_field :logo
+  %p
+    = f.label :background, 'Background'
+    = f.file_field :background
+  %p  
+    = f.submit nil, :class => "btn btn-inverse btn-large"

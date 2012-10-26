@@ -7,6 +7,89 @@ describe IdeasController do
     {title: "Londrina", description: "Lorem Ipsum é simplesmente uma simulação", short_description: "Lorem Ipsum é simplesmente uma simulação"}
   end
 
+  describe "POST 'update'" do
+    let!(:user) { FactoryGirl.create(:user) }
+    let!(:idea) { FactoryGirl.create(:idea, :user_id => user.id) }
+    context "with authenticated user" do
+      before do 
+        login!
+      end
+      context "with valid params" do
+        context "when user owns the idea" do
+          before do
+            session[:user_id] = user.id
+            put 'update', :id => idea.to_param, :idea => { :title => "Curitiba" }
+          end
+
+          it { assigns(:idea).should == idea }
+          it { redirect_to(root_path) }
+          it { flash[:notice].should == "Atualizado com sucesso!" }
+          it { idea.reload.title.should == "Curitiba" }
+        end
+        context "when user isnt the idea's owner" do
+          before do
+            put 'update', :id => idea.to_param, :idea => { :title => "Curitiba" }
+          end
+
+          it { response.should redirect_to(root_path) }
+          it { flash[:alert].should == "Você não tem permissão!" }
+        end
+      end
+      context "with invalid params" do
+        before do
+          session[:user_id] = user.id
+          put 'update', :id => idea.to_param, :idea => { :title => "" }
+        end
+        context "when user owns the idea" do
+          it { assigns(:idea).should == idea }
+          it { render_template 'edit' }
+        end
+      end
+    end
+    
+    context "without authenticated user" do
+      it "should redirect to home" do
+        put 'update', :id => idea.to_param, :idea => { :title => "Curitiba" }
+        response.should redirect_to(root_path)
+      end
+    end
+  end
+  
+  describe "GET 'edit" do
+    let!(:user) { FactoryGirl.create(:user) }
+    let!(:idea) { FactoryGirl.create(:idea, :user_id => user.id) }
+    context "with authenticated user" do
+      before do
+        login!
+      end
+      context "when user owns the idea" do
+        before do
+          session[:user_id] = user.id
+          get 'edit', :id => idea.to_param
+        end
+      
+        it { response.should be_success }
+        it { assigns(:idea).should be_instance_of Idea }
+        it { render_template 'edit' }
+      end
+      context "when user isnt the idea's owner" do
+        before do
+          get 'edit', :id => idea.to_param
+        end
+      
+        it { response.should redirect_to(root_path) }
+        it { flash[:alert].should == "Você não tem permissão!" }
+      end
+    end
+    
+    context "without authenticated user" do
+      it "should redirect to home" do
+        get 'edit', :id => idea.to_param
+        response.should redirect_to(root_path)
+      end
+    end
+  end
+
   describe "GET 'new'" do
     context "with authenticated user" do
       before do
