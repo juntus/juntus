@@ -34,6 +34,6 @@ class IdeasController < ApplicationController
   end
   
   def index
-    @ideas = Idea.all
+    @ideas = Idea.all.sample(Idea.count)
   end
 end
