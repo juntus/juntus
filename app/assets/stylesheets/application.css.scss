@@ -11,6 +11,7 @@ $text_color: #666666;
 $red: #c1272d;
 $cyan: #78a4a7;
 $purple: #657FA2;
+$green: #36767b;
 
 body{
   background-color: $bg_color;
@@ -18,6 +19,9 @@ body{
 
 a{
   color: $link_color;
+  &:hover{
+    color: darken($link_color, 10%);
+  }
 }
 
 .container-fluid{
@@ -78,7 +82,7 @@ header{
     margin: 0;
     a{
       display: block;
-      background:#C1272D;
+      background: $green;
     	color:#FFF;
     	margin-top:6px;
     	padding: 10px 1px 10px 14px;
@@ -127,9 +131,9 @@ header{
   background-color: #fff;
   padding: 20px;
   border: 2px solid #ccc;
-  -moz-border-radius: .5em;
-  -webkit-border-radius: .5em;
-  border-radius: .5em;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
   margin: 0 auto;
   margin-bottom: 2em;
   float: none;
@@ -137,7 +141,8 @@ header{
 
 .idea-content{
   padding: 0px;
-  border-width: 0px;
+  border-color: #fff;
+  background: #fff image-url("idea-content-bg.png") repeat-y;
   .inner{
     padding: 10px;
   }
@@ -145,17 +150,33 @@ header{
 
 .idea-header{
   padding: 0px;
-  background-color: $red;
   color: #fff;
+  position: relative;
+  margin: 30px -20px 10px -20px;
+  min-height: 180px;
+  background: $green image-url("idea-shadow-large.png") no-repeat bottom center;
+  .idea-image{
+    position: absolute;
+    top: -10px;
+    left: 30px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+  }
   h2{
     font-size: 200%;
     margin: 0px;
   }
+  .idea-button{
+    margin-top: 10px;
+  }
 }
 
 .idea-body{
+  color: $text_color;
+  font-size: 16px;
+  padding: 10px;
   aside{
-    background-color: #ededed;
     h5{
       clear: both;
       text-align: center;
@@ -163,12 +184,18 @@ header{
       background-color: $cyan;
       font-weight: normal;
       padding: 10px 0px;
+      margin-left: -5px;
     }
+  }
+  
+  .fb-comments{
+    padding-top: 10px;
+    border-top: 1px solid #ededed;
   }
   
   .registered_count, .comment_count{
     float: left;
-    margin: 10px 20px;
+    margin: 10px 15px;
     padding: 10px;
     text-align: center;
     .counter{
@@ -191,6 +218,10 @@ header{
   .comment_count{
     color: $purple;
     .counter{ background-color: $purple; }
+  }
+  
+  .registered_list li{
+    margin: 5px 0px;
   }
 }
 

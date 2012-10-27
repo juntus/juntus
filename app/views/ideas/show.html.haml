@@ -1,9 +1,9 @@
 .row
   .content.span12.idea-content
-    .idea-header.row-fluid
-      .inner
-        .span2.idea-photo
-        .span8.idea-title
+    .idea-header
+      = image_tag(@idea.logo.url("medium"), :class => "idea-image", :width => "200")
+      .inner.row
+        .span7.offset3.idea-title
           %h2= @idea.title
           %p= @idea.short_description
         .span2.idea-button
@@ -12,21 +12,20 @@
       .inner
         .span8
           = simple_format(@idea.description)
-          %hr
           .fb-comments{"data-href" => idea_url(@idea), "data-num-posts" => "2"}
         
-      %aside.span4
-        .registered_count
-          .counter= @idea.registrations.count
-          participantes
-        .comment_count
-          .counter<
-            %fb:comments-count{"href" => idea_url(@idea)}
-          comentários
+        %aside.span4
+          .registered_count
+            .counter= @idea.registrations.count
+            participantes
+          .comment_count
+            .counter<
+              %fb:comments-count{"href" => idea_url(@idea)}
+            comentários
         
-        %h5 participantes
-        %ul.registered_list
-          - @idea.users.each do |user|
-            %li
-              = image_tag(user.photo_url, :class => "img-circle")
-              = user.name
+          %h5 participantes
+          %ul.registered_list
+            - @idea.users.each do |user|
+              %li
+                = image_tag(user.photo_url, :class => "img-circle")
+                = user.name
